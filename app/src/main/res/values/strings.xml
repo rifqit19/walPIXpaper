@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Mobile Legends Wallpaper</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="alert_permission_denies">Access denied</string>
+    <string name="mengambil_data">Getting data&#8230;</string>
+    <string name="cari">Search</string>
+    <string name="data_tidak_ketemu">Data not found</string>
+    <string name="set_wallpaper">Setting up Wallpaper</string>
+    <string name="akses_ditolak">Access denied</string>
+    <string name="ijin_akses_memory">We need your permission to access your device memory</string>
+    <string name="ijin_atur_wallpaper">We need permission to change your wallpaper</string>
+    <string name="atur_wallpaper">Set as Wallpaper</string>
+    <string name="download_image">Downloading Image</string>
+</resources>

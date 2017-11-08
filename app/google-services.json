@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "876483095106",
+    "firebase_url": "https://wallpaper-ml.firebaseio.com",
+    "project_id": "wallpaper-ml",
+    "storage_bucket": "wallpaper-ml.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876483095106:android:842e34be626f38cd",
+        "android_client_info": {
+          "package_name": "com.ya.mobilelegends.wallpaper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "876483095106-1jkdfn8s89ega0a9piujcj8jjfgug0tr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAklYAb4JJPb4BCpdIxhOrpmgF3WQbaiU4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
