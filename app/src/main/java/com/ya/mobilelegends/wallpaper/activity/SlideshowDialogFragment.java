@@ -249,8 +249,6 @@ public class SlideshowDialogFragment extends DialogFragment {
             return view == ((View) obj);
         }
 
-
-
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
             container.removeView((View) object);
