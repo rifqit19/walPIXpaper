@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.app.WallpaperManager;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -15,6 +16,7 @@ import android.os.Environment;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +33,10 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 
+import com.bumptech.glide.request.target.BaseTarget;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.SizeReadyCallback;
+import com.bumptech.glide.request.transition.Transition;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
@@ -47,6 +53,9 @@ public class SlideshowDialogFragment extends DialogFragment {
     private ImageView img_download;
     private int selectedPosition = 0;
     Bitmap chefBitmap;
+
+
+    String url_large = "";
 
     String logTitle = "null";
     private FirebaseAnalytics mFirebaseAnalytics;
@@ -83,8 +92,7 @@ public class SlideshowDialogFragment extends DialogFragment {
         btnWallpaper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-               checkWallpaperPermission();
+               checkWallpaperPermission(url_large);
             }
         });
 
@@ -117,6 +125,8 @@ public class SlideshowDialogFragment extends DialogFragment {
         }
     };
 
+
+
     private void displayMetaInfo(int position) {
         lblCount.setText((position + 1) + " of " + images.size());
 
@@ -126,22 +136,16 @@ public class SlideshowDialogFragment extends DialogFragment {
 
         logTitle = image.getName();
 
+        url_large = image.getLarge();
+
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 //your action
 
                 try {
-                    chefBitmap = Glide.with(getActivity())
-                            .asBitmap()
-                            .load(image.getLarge())
-                            .submit()
-                            .get();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
-                }catch (NullPointerException e){
+
+                } catch (NullPointerException e){
                     e.printStackTrace();
                 }
             }
@@ -158,13 +162,32 @@ public class SlideshowDialogFragment extends DialogFragment {
 
     }
 
+
+    private BaseTarget setBitmapWallpaper = new BaseTarget<BitmapDrawable>() {
+        @Override
+        public void onResourceReady(BitmapDrawable bitmap, Transition<? super BitmapDrawable> transition) {
+            // do something with the bitmap
+            // for demonstration purposes, let's set it to an imageview
+            Log.e("resource ready", "jalan");
+            chefBitmap = bitmap.getBitmap();
+
+            setWallpaper();
+        }
+
+        @Override
+        public void getSize(SizeReadyCallback cb) {
+//            cb.onSizeReady(250, 250);
+        }
+
+        @Override
+        public void removeCallback(SizeReadyCallback cb) {}
+    };
+
     public void setWallpaper(){
 
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, logTitle);
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
-
-        Toast.makeText(getActivity().getApplicationContext(), R.string.set_wallpaper, Toast.LENGTH_SHORT).show();
 
         WallpaperManager wallpaperManager =
                 WallpaperManager.getInstance(getActivity().getApplicationContext());
@@ -288,12 +311,29 @@ public class SlideshowDialogFragment extends DialogFragment {
         }
     }
 
-    public void checkWallpaperPermission(){
+    public void runSetWallpaper(String url){
+
+        Toast.makeText(getActivity().getApplicationContext(), R.string.set_wallpaper, Toast.LENGTH_SHORT).show();
+
+        Glide.with(this)
+                .asBitmap()
+                .load(url)
+                .into(new SimpleTarget<Bitmap>() {
+                    @Override
+                    public void onResourceReady(Bitmap resource, Transition<? super Bitmap> transition) {
+                        chefBitmap = resource;
+
+                        setWallpaper();
+                    }
+                });
+    }
+
+    public void checkWallpaperPermission(final String url){
         if (Build.VERSION.SDK_INT >= 23) {
             PermissionListener permissionlistener = new PermissionListener() {
                 @Override
                 public void onPermissionGranted() {
-                    setWallpaper();
+                    runSetWallpaper(url);
                 }
 
                 @Override
@@ -313,7 +353,7 @@ public class SlideshowDialogFragment extends DialogFragment {
 
         } else {
 
-            setWallpaper();
+            runSetWallpaper(url);
 
         }
     }
