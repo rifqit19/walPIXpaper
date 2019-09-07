@@ -3,4 +3,49 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="mar20">20dp</dimen>
+    <dimen name="mar80">80dp</dimen>
+    <dimen name="mar3">3dp</dimen>
+    <dimen name="mar8">8dp</dimen>
+    <dimen name="mar2">2dp</dimen>
+    <dimen name="mar7">7dp</dimen>
+    <dimen name="mar6">6dp</dimen>
+
+    <dimen name="activity_big_margin">22dp</dimen>
+    <dimen name="margin_extra_small">4dp</dimen>
+    <dimen name="margin_mid_extra_small">5dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_mid">12dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_big">32dp</dimen>
+    <dimen name="margin_extra_big">48dp</dimen>
+    <dimen name="margin_content_bottom">48dp</dimen>
+    <dimen name="margin_right_kode_promo">120dp</dimen>
+    <dimen name="margin_btn_top">-26dp</dimen>
+
+    <dimen name="actionBarSize">52dp</dimen>
+    <dimen name="actionIcon">24dp</dimen>
+    <dimen name="medium_action_icon">30dp</dimen>
+
+    <dimen name="thumbnail_photo_profile">150dp</dimen>
+    <dimen name="thumbnail_icon_drawer">100dp</dimen>
+    <dimen name="thumbnail_photo_profile_small">75dp</dimen>
+    <dimen name="thumbnail_icon_small">50dp</dimen>
+    <dimen name="thumbnail_product_heigt">75dp</dimen>
+    <dimen name="thumbnail_product_home">36dp</dimen>
+
+    <dimen name="text_big_size">16sp</dimen>
+    <dimen name="text_medium_size">14sp</dimen>
+    <dimen name="text_small_size">12sp</dimen>
+    <dimen name="text_extra_small_size">10sp</dimen>
+
+    <dimen name="title_small_size">18sp</dimen>
+    <dimen name="title_medium_size">20sp</dimen>
+    <dimen name="title_big_size">24sp</dimen>
+    <dimen name="title_home_name">26sp</dimen>
+    <dimen name="title_splash_size">30sp</dimen>
+    <dimen name="title_line_spacing_medium_size">4dp</dimen>
+    <dimen name="slider_size">200dp</dimen>
+
 </resources>

@@ -1,9 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GetCropped">
+    android:id="@+id/myLyt"
+    tools:context=".activity.GetCropped"
+    android:background="@android:color/black">
 
-</android.support.constraint.ConstraintLayout>
+    <com.rifqi3g.wallpixpaper.wallpaper.helper.TouchImageView
+        android:id="@+id/imgCropped"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        />
+
+    <ImageButton
+        android:id="@+id/backGC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="done"
+        android:layout_alignParentLeft="true"
+        android:padding="12dp"
+        android:src="@drawable/ic_back"
+        android:background="@android:color/transparent"/>
+
+    <RelativeLayout
+        android:id="@+id/lytSetWallpaper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black_alpha_30"
+        android:padding="10dp">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_check"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Set Wallpaper"
+                android:layout_marginLeft="4dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/white"
+                />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

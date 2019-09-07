@@ -1,9 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/cropLyt"
     android:layout_height="match_parent"
-    tools:context=".CropImageView">
+    tools:context=".CropImageView"
+    >
 
-</android.support.constraint.ConstraintLayout>
+    <com.theartofdev.edmodo.cropper.CropImageView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cropImageView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        app:cropBackgroundColor="#88333333"
+        app:cropBorderCornerColor="@color/colorPrimary"
+        app:cropBorderCornerOffset="0dp"
+        app:cropBorderCornerThickness="5dp"
+        app:cropBorderLineColor="@color/colorPrimaryDark"
+        app:cropBorderLineThickness="1dp"
+        app:cropGuidelines="off"
+        app:cropGuidelinesColor="@android:color/holo_red_dark"
+        app:cropInitialCropWindowPaddingRatio="0"
+        app:cropSnapRadius="0dp" />
+
+    <android.support.v7.widget.AppCompatImageButton
+        android:id="@+id/done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="done"
+        android:layout_alignParentRight="true"
+        android:padding="12dp"
+        android:src="@drawable/ic_check"
+        android:background="@android:color/transparent"/>
+
+    <android.support.v7.widget.AppCompatImageButton
+        android:id="@+id/backC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="done"
+        android:layout_alignParentLeft="true"
+        android:padding="12dp"
+        android:src="@drawable/ic_back"
+        android:background="@android:color/transparent"/>
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menuRetio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginRight="11dp"
+        app:menu_animationDelayPerItem="55"
+        app:menu_backgroundColor="@android:color/transparent"
+        app:menu_buttonSpacing="0dp"
+        app:menu_colorNormal="#5C27FE"
+        app:menu_colorPressed="#C165DD"
+        app:menu_colorRipple="#99d4d4d4"
+        app:menu_fab_size="normal"
+        app:menu_icon="@drawable/ic_crop_free"
+        app:menu_labels_colorNormal="#333"
+        app:menu_labels_colorPressed="#444"
+        app:menu_labels_colorRipple="#66efecec"
+        app:menu_labels_cornerRadius="3dp"
+        app:menu_labels_ellipsize="none"
+        app:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"
+        app:menu_labels_margin="0dp"
+        app:menu_labels_maxLines="-1"
+        app:menu_labels_padding="8dp"
+        app:menu_labels_position="left"
+        app:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
+        app:menu_labels_showShadow="false"
+        app:menu_labels_singleLine="false"
+        app:menu_labels_textColor="#f2f1f1"
+        app:menu_labels_textSize="15sp"
+        app:menu_openDirection="up"
+        >
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/btn_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_vertical_24dp"
+            app:fab_label="Vertical"
+            app:fab_size="mini"
+            app:fab_colorNormal="@color/light_green"
+            app:fab_colorPressed="@color/dark_green"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/btn_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_horizontal"
+            app:fab_label="Horizontal"
+            app:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/btn_custom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_ratio"
+            app:fab_label="Custom"
+            app:fab_size="mini"
+            app:fab_colorNormal="@color/light_blue"
+            app:fab_colorPressed="@color/dark_blue"/>
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+
+
+</RelativeLayout>

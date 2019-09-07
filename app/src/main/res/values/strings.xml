@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Mobile Legends Wallpaper</string>
+    <string name="app_name">wallPIXpaper</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="alert_permission_denies">Access denied</string>
@@ -12,4 +12,7 @@
     <string name="ijin_atur_wallpaper">We need permission to change your wallpaper</string>
     <string name="atur_wallpaper">Set as Wallpaper</string>
     <string name="download_image">Downloading Image</string>
+    <string name="Open">Open Menu</string>
+    <string name="Close">Close menu</string>
+    <string name="batal">Cancel</string>
 </resources>

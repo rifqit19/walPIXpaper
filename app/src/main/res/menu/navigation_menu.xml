@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single" >
+
+        <item android:id="@+id/kat11"
+            android:title="Modern"/>
+        <item android:id="@+id/kat21"
+            android:title="Classic"/>
+        <item android:id="@+id/kat31"
+            android:title="Nature"/>
+        <item android:id="@+id/kat41"
+            android:title="Abstract"/>
+        <item android:id="@+id/kat51"
+            android:title="Love"/>
+        <item android:id="@+id/kat61"
+            android:title="Funny"/>
+
+
+    </group>
+
+
+</menu>

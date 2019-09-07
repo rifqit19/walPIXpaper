@@ -1,4 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <group android:checkableBehavior="single" >
+
+        <item android:id="@+id/kat1"
+            android:title="Modern"/>
+        <item android:id="@+id/kat2"
+            android:title="Classic"/>
+        <item android:id="@+id/kat3"
+            android:title="Nature"/>
+        <item android:id="@+id/kat4"
+            android:title="Abstract"/>
+        <item android:id="@+id/kat5"
+            android:title="Love"/>
+        <item android:id="@+id/kat6"
+            android:title="Funny"/>
+        <item android:id="@+id/kat7"
+            android:title="City"/>
+        <item android:id="@+id/kat8"
+            android:title="Animal"/>
+        <item android:id="@+id/kat9"
+            android:title="Art"/>
+        <item android:id="@+id/kat10"
+            android:title="Flora"/>
+        <item android:id="@+id/kat11"
+            android:title="Life Style"/>
+
+    </group>
+
+
+    <item android:title="Aplication">
+        <menu>
+            <item
+                android:id="@+id/about"
+                android:icon="@drawable/ic_about2"
+                android:title="About" />
+        </menu>
+    </item>
 
 </menu>
